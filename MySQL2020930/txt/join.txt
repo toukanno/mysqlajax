@@ -1,0 +1,15 @@
+https://zenn.dev/naoki_mochizuki/articles/60603b2cdc273cd51c59
+SQL素人でも分かるテーブル結合
+(inner joinとouter join)
+内部結合の場合、ベースとなるテーブルから、条件にマッチするレコードがないものは削除される
+内部結合のようにそれぞれのテーブルの指定したカラムの値が一致するものを結合するのに加え、どちらかのテーブルにしか存在しないものに関しても取得
+SELECT カラム名1, カラム名2, ... FROM テーブル名１
+  INNER JOIN テーブル名2 ON 結合の条件
+SELECT カラム名1, カラム名2, ...,FROM テーブル1 
+LEFT(RIGHT) OUTER JOIN テーブル名2 ON 結合の条件
+SELECT * FROM dogs
+INNER JOIN owners 
+        ON dogs.owner_id = owners.id;
+SELECT * FROM dogs 
+LEFT OUTER JOIN owners 
+             ON dogs.owner_id = owners.id;

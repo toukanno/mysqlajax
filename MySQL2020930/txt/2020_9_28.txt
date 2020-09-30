@@ -1,0 +1,42 @@
+https://qiita.com/mpyw/items/b00b72c5c95aac573b71
+PDO::query メソッドで直接クエリを実行する
+PDO::exec メソッドで直接クエリを実行する
+
+foreachを三回回す返信内容2回目の返信内容までなら表示可能 返信内容分foreachが増えてしまう
+
+SELECT 
+  *, 
+  (SELECT AVG(likes) FROM posts) AS avg,
+  (SELECT AVG(likes) FROM posts AS t2 WHERE t1.area = t2.area) AS area_avg
+FROM 
+  posts AS t1;
+
+  //相関サブクエリを使えば行けそう
+
+  SELECT 
+  *, 
+  (SELECT text_id, reply_id, comment, datetime FROM t_text WHERE reply_id = 0),
+  (SELECT text_id, reply_id, comment, datetime FROM t_text AS t2 WHERE t1.text_id = t2.reply_id)
+
+FROM 
+  posts AS t1;
+//
+//
+  SELECT
+  text_id, reply_id, comment, datetime
+FROM
+  t_text
+WHERE
+  reply_id = (SELECT text_id FROM t_text);
+SQL素人でも分かるテーブル結合(inner joinとouter join)
+ https://zenn.dev/naoki_mochizuki/articles/60603b2cdc273cd51c59 
+エラーおよびエラー処理
+ https://www.php.net/manual/ja/pdo.error-handling.php
+
+ PDOはデフォルトではエラー出力をしないです
+ PDO::ERRMODE_SILENT
+ https://unskilled.site/pdo%E3%81%AF%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%E3%81%A7%E3%81%AF%E3%82%A8%E3%83%A9%E3%83%BC%E5%87%BA%E5%8A%9B%E3%82%92%E3%81%97%E3%81%AA%E3%81%84%E3%81%A7%E3%81%99/
+ PDO::errorInfo()ではエラーコード、エラー番号、エラーメッセージが配列で得られます。
+ デフォルトのエラー設定。エラーメッセージを出力しない。エラー内容は保持している。 エラ−を取得するにはPDO::errorCode()かPDO::errorInfo()を使います。
+
+PDO::ERRMODE_SILENTについてはデフォルトなのでsetAttribute()しなくてもいいのですが、今回は例を示すために明示的に記述しています。
