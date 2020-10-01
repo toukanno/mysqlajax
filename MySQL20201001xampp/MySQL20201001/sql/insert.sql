@@ -1,0 +1,13 @@
+INSERT INTO `t_text`(`text_id`, `reply_parent_id`, `reply_id`, `user_id`, `comment`, `datetime`, `deleteflg`) VALUES (1,0,0,11,"ないよう1","2020-09-24 07:09:07",0);
+INSERT INTO `t_text`(`text_id`, `reply_parent_id`, `reply_id`, `user_id`, `comment`, `datetime`, `deleteflg`) VALUES (2,0,0,11,"ないよう２","2020-09-24 07:09:13",0);
+INSERT INTO `t_text`(`text_id`, `reply_parent_id`, `reply_id`, `user_id`, `comment`, `datetime`, `deleteflg`) VALUES (3,0,0,11,"ないよう３","2020-09-24 07:09:21",0);
+INSERT INTO `t_text`(`text_id`, `reply_parent_id`, `reply_id`, `user_id`, `comment`, `datetime`, `deleteflg`) VALUES (4,0,0,11,"ないよう４","2020-09-24 07:09:23",0);
+INSERT INTO `t_text`(`text_id`, `reply_parent_id`, `reply_id`, `user_id`, `comment`, `datetime`, `deleteflg`) VALUES (5,0,0,12,"ないよう５","2020-09-24 07:09:32",0);
+INSERT INTO `t_text`(`text_id`, `reply_parent_id`, `reply_id`, `user_id`, `comment`, `datetime`, `deleteflg`) VALUES (6,0,0,12,"ないよう６","2020-09-24 07:09:37",0);
+INSERT INTO `t_text`(`text_id`, `reply_parent_id`, `reply_id`, `user_id`, `comment`, `datetime`, `deleteflg`) VALUES (7,0,0,12,"ないよう７","2020-09-24 07:09:45",0);
+INSERT INTO `t_text`(`text_id`, `reply_parent_id`, `reply_id`, `user_id`, `comment`, `datetime`, `deleteflg`) VALUES (8,7,7,12,"7番目のuser3へ返信：ないよう８","2020-09-24 08:09:23",0);  
+INSERT INTO `t_text`(`text_id`, `reply_parent_id`, `reply_id`, `user_id`, `comment`, `datetime`, `deleteflg`) VALUES (9,7,8,12,"8番目のuser3へ返信：ないよう9","2020-09-24 09:09:13",0);
+INSERT INTO `t_text`(`text_id`, `reply_parent_id`, `reply_id`, `user_id`, `comment`, `datetime`, `deleteflg`) VALUES (10,6,6,11,"6番目のuser3へ返信：へんしんないよう","2020-09-25 01:09:58",0);
+INSERT INTO `t_text`(`text_id`, `reply_parent_id`, `reply_id`, `user_id`, `comment`, `datetime`, `deleteflg`) VALUES (11,2,2,11,"2番目のuser2へ返信：へんしんないよう２","2020-09-25 01:09:02",0);
+INSERT INTO `t_text`(`text_id`, `reply_parent_id`, `reply_id`, `user_id`, `comment`, `datetime`, `deleteflg`) VALUES (12,7,9,11,"9番目のuser3へ返信：へんしんないよう3","2020-09-28 01:09:06",0);
+INSERT INTO `t_text`(`text_id`, `reply_parent_id`, `reply_id`, `user_id`, `comment`, `datetime`, `deleteflg`) VALUES (13,7,12,10,"12番目のuser2へ返信：へんしんないよう4","2020-09-28 01:09:10",0);

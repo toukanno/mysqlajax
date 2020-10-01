@@ -1,0 +1,33 @@
+関数スコープ外からスコープ内の変数を取得できるか
+https://teratail.com/questions/97163
+https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Errors/Not_defined
+ReferenceError: "x" is not defined
+https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Grammar_and_types#Declaring_variables
+https://stackoverrun.com/ja/q/184519
+How to call a JavaScript function from PHP?
+PHPはサーバーで実行されます。JavaScriptはクライアントで実行されます。したがって、phpはJavaScript関数を呼び出すことができません。
+PHPからJavaScript関数を呼び出す方法
+https://www.it-swarm-ja.tech/ja/php/php%E3%81%8B%E3%82%89javascript%E9%96%A2%E6%95%B0%E3%82%92%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%99%E6%96%B9%E6%B3%95/967202777/
+
+https://qiita.com/art_porokyu/items/ffb08251a83e4fe46d57
+【PHP】Ajaxで非同期通信を行う方法。
+https://www.tam-tam.co.jp/tipsnote/javascript/post5050.html
+jQuery のバブリング、preventDefault() や stopPropagation() の使用例
+PHPとの間でAjax通信をおこなう[jQuery][post][done/fail/always]
+https://noumenon-th.net/programming/2016/03/29/php_ajax/
+https://hacknote.jp/archives/43636/
+[Ajax] JavascriptからPHPの関数を実行する
+https://pisuke-code.com/php-ways-to-embed-javascript/
+PHPからJavaScriptをスマートに呼び出す２つの方法
+https://techacademy.jp/magazine/9477
+jQueryでfindメソッドを使って子要素を選択する方法【初心者向け】
+https://qiita.com/gestalt/items/49ce437f81c812a1b053
+https://qiita.com/gestalt/items/49ce437f81c812a1b053
+jQueryのfindメソッド
+https://www.sejuku.net/blog/37474
+http://semooh.jp/jquery/api/manipulation/append/content/
+https://bonokara.com/jquery-php-ajax2/
+Ajaxでのデータ通信　データを送る・返す
+https://ja.stackoverflow.com/questions/51997/ajax%E3%81%AEsuccessfunction%E3%81%A7php%E5%81%B4%E3%81%8B%E3%82%89%E3%81%AE%E8%A4%87%E6%95%B0%E3%81%AE%E5%80%A4%E3%82%92%E5%8F%97%E3%81%91%E5%8F%96%E3%82%8B%E6%96%B9%E6%B3%95
+https://www.sejuku.net/blog/37474
+【jQuery入門】find()で子要素を取得する手法まとめ！

@@ -1,0 +1,112 @@
+https://qiita.com/super2baba/items/b1301ca567b60b2e00c7
+jQueryのAjaxをPHPで使うやつ
+
+jQueryの基本 - $(document).ready
+https://qiita.com/8845musign/items/88a8c693c84ba63cea1d
+これは画像などを除いて、HTML=DOMの読み込みが終わったらfunction()の中の処理(=なにかしらの処理)を実行するという意味です。
+$(document).ready(function(){
+  $(".smooth").smoothScroll();
+  $("#slider").slider();
+  $("#nav").nav();
+});
+
+//もしくは
+
+$(function(){
+  $(".smooth").smoothScroll();
+  $("#slider").slider();
+  $("#nav").nav();  
+});
+$(window).loadとの違い
+画像など含めすべてのコンテンツの読み込みが終わる
+jQueryのイベントをアロー関数で
+https://codecodeweb.com/blog/424/
+https://rachicom.net/frontend/jquery-this.html
+jQuery でもアロー関数とthisを使いたい
+$(document).readyの複数記述はあり？なし？
+https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q12141795497
+http://js.studio-kingdom.com/jquery/ajax/ajax
+Ajaxリクエストを送信するオプションをキーと値のペアで指定します。 このオプションに初期値を設定したい場合は、 $.ajaxSetup()を使用します。
+https://qiita.com/zakiyamaaaaa/items/bdda422db2ccbaea60d9
+Ajaxとは「Asynchronous JavaScript + XML」の略
+ページ遷移をさせず（非同期処理で）コンテンツを書き換えられる
+他の処理と同時並行で、サーバとやりとりができる
+[success / function
+AJAX通信が成功した場合に呼び出されるAjax Eventです。戻ってきたデータとdataTypeに指定した値の2つの引数を受け取ります。
+function(data, dataType){
+  // dataの値を用いて、通信成功時の処理を記述します。
+  this; // thisはAJAX送信時に設定したオプションです
+}]
+http://semooh.jp/jquery/api/ajax/jQuery.ajax/options/
+https://www.atmarkit.co.jp/ait/articles/1007/30/news110_2.html
+イベントsuccess　コールバック関数
+https://qiita.com/tonkotsuboy_com/items/0722ad92f370ab0c411b
+イマドキの$.ajax()はこう書く
+$.ajax({
+        オプション
+    })
+    .then(成功時の処理, 失敗時の処理);
+    アロー関数でもっとイマドキに
+    https://medium.com/@bbxxuw/jquery-ajax%E3%81%AEsuccess-error-complete%E3%81%AF%E9%9D%9E%E6%8E%A8%E5%A5%A8%E3%81%A3%E3%81%A6%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%9F-797da1b8adc7
+   jQuery ajaxのsuccess、error、completeは非推奨って知ってた？ 
+   $.ajax({
+  url:'header.html'
+  type: 'GET',
+  cache: false,
+  dataType: 'html'
+}).done(function(html) {
+  $('#container').append(html);
+}).fail(function() {
+  alert('エラーが起きました');
+}).always(function() {
+  console.log('complete');
+});
+XMLHttpRequest, textStatus, errorThrown
+【ajax】通信エラーとなった原因の取得方
+https://hacknote.jp/archives/38740/
+・XMLHttpRequest.status：HTTPリクエストのステータスの取得
+・textStatus：タイムアウト、パースエラー等のエラー情報の取得
+・errorThrown.message：例外情報の取得
+https://qiita.com/qwq00/items/b95edb10156a64fa347f
+https://daitaisonnamon.hatenablog.jp/entry/2019/10/31/234041
+https://remotestance.com/blog/2687/
+https://ysklog.net/jquery/ajax/4501.html
+ajax通信エラーの原因を取得
+HTTP レスポンスステータスコード
+https://developer.mozilla.org/ja/docs/Web/HTTP/Status
+情報レスポンス (100–199),
+成功レスポンス (200–299),
+リダイレクト (300–399),
+クライアントエラー (400–499),
+サーバエラー (500–599)
+https://did2memo.net/2017/01/28/a3-network-error/
+【A3（エースリー）】「通信エラー」「タイムアウトエラー」等のエラーの発生と対策について
+http://accel-archives.intra-mart.jp/2015-spring/document/iap/public/im_ui/im_design_guideline_pc/texts/error/ajax_error.html
+
+https://iwb.jp/jquery-click-distinction/
+jQueryを使用して1回目、2回目、2回目以降のクリックを判別する方法
+
+[jQuery]非同期通信でsubmit-btnが2回目以降押せない件...
+https://qiita.com/nkekisasa222/items/7849ceb0e0dcbcdc3100
+https://qiita.com/HrsUed/items/795799f511f5717c181a
+　〜中略〜
+$.ajax({
+　〜中略〜
+}).done((data) => {
+  const html = buildHTML(data);
+  $(".messages").append(html);
+  $(".form__text").val("");
+}).fail(() => {
+  alert("メッセージの送信に失敗しました。");
+})
+//　ここから
+.always(() => {
+$(".form__submit").removeAttr("disabled");
+});
+// ここまで追加
+　〜中略〜
+jQueryでイベントが発火しない場合の対応
+https://qiita.com/sho91/items/22279a44499aebd7b49a
+【JQuery】click()とon(click)の違い
+https://www.flatflag.nir87.com/var-2219#i-10
+セレクタに変数を使う

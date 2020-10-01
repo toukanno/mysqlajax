@@ -1,0 +1,10 @@
+PHP 5.3.6より前のバージョンの PDO MySQL で charset を指定する
+https://qiita.com/ngyuki/items/d88a4df860abb51eb714
+<?php
+$options = array(
+    PDO::MYSQL_ATTR_READ_DEFAULT_FILE  => '/etc/my.cnf',
+); 
+$pdo = new PDO(
+    'mysql:host=yourhost;dbname=yourdb',
+    'user', 'password', $options
+);

@@ -1,0 +1,58 @@
+http://develog.hatenablog.com/entry/2016/12/21/084007
+フォームデータをデータベースに登録します
+
+https://qiita.com/harufuji/items/d033d3480a0c791973ae
+PHPで入力フォームのデータをSELECT文のINSERTを使って、MySQLに書き込む
+フォームの投稿内容をデータベースに格納して、格納した内容をPHP側に表示したい
+https://teratail.com/questions/91077
+  if(! isset($handle)) {
+        echo '名前が記入されていません。';
+        header('Location: http://'. $_SERVER['HTTP_HOST'] . '/index.html');
+        exit;
+    }
+【PHP+MySQL】クエリの実行/execute()
+http://lovee7.blog.fc2.com/blog-entry-42.html
+PHPのexecute関数の使い方を現役エンジニアが解説【初心者向け】
+https://techacademy.jp/magazine/40771
+prepareとexecuteとqueryの使い分けについて
+https://teratail.com/questions/38928
+
+PDO prepare プリペアドステートメントの使い方
+https://bituse.info/php/35#:~:text=%E3%83%97%E3%83%AA%E3%83%9A%E3%82%A2%E3%83%89%E3%82%B9%E3%83%86%E3%83%BC%E3%83%88%E3%83%A1%E3%83%B3%E3%83%88%E3%81%A8%E3%81%AF%E3%80%81SQL,%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99%E3%80%82
+01
+//PDOオブジェクトの生成
+02
+$pdo = new PDO("mysql:dbname=test;host=localhost",USERNAME,PASSWORD);
+03
+ 
+04
+//prepareメソッドでSQLをセット
+05
+$stmt = $pdo->prepare("select name from test where id = ? and num = ?");
+06
+ 
+07
+//bindValueメソッドでパラメータをセット
+08
+$stmt->bindValue(1,2);
+09
+$stmt->bindValue(2,10);
+10
+ 
+11
+//executeでクエリを実行
+12
+$stmt->execute();
+13
+ 
+14
+//結果を表示
+15
+$result = $stmt->fetch();
+16
+echo "name = ".$result['name'];
+https://pentan.info/php/exception.html
+例外処理(Exception)
+https://www.javadrive.jp/php/pdo/index9.html
+Fatal error: Call to a member function ~ on a non-object
+https://qiita.com/SuguruOoki/items/30858b6768250196c9d2

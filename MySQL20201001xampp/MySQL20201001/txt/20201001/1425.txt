@@ -1,0 +1,29 @@
+https://www.sejuku.net/blog/37847
+jQueryのappendでDOM要素を追加する方法まとめ！
+「append()」は、指定した子要素の最後にテキスト文字やHTML要素を追加することができるメソッドになります。
+[CSS] 個々の要素にクラスを設定して縞のテーブルの表示、ヘッダのスタイル変更、特定の列のスタイル変更をする
+https://www.ipentec.com/document/css-table-setting-to-set-class-to-individual-element
+https://www.sejuku.net/blog/38267
+それは、対象の要素に「html()」を実行すると中身がすべて上書きされるという性質です！
+jQueryには、「html()」とよく似た機能を持つメソッドがいくつかあります。なかでも、特に類似メソッドとしてよく比較されるのが「text()」と「append()」になります。それぞれのメソッドは「html()」と似たような機能がありますが、細かい部分でまったく違うので注意が必要です。
+send.php側でthからすべて出力する
+https://so-zou.jp/web-app/tech/programming/php/sample/javascript-cooperation.htm
+PHPとJavaScriptの連携
+<?php
+
+echo <<<EOM
+<script type="text/javascript">
+  alert( "TEST" )
+</script>
+EOM;
+
+?>
+PHP ヒアドキュメントの使いかた
+https://qiita.com/39_isao/items/8987fd62cf0e50c3be39
+http://www.php-labo.net/tutorial/php/heredocument.html
+ヒアドキュメントについて
+<<< がヒアドキュメントの合図で、この次に書いた文字が再度出現するまで、すべて出力されます。
+https://b-estack.com/2018/10/24/useful_filter_input/
+ものすごい簡単にいうと $_GET や $_POST などのグローバルな値をバリデーション混みで取得して変数にいれたり、できない場合は null にする。ちなみにバリデーションの初期値は FILTER_DEFAULT で、特にバリデートもサニタイズもしません。
+https://agohack.com/php-filter-input/
+filter_input の使い方
