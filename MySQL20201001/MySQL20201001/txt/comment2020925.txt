@@ -1,0 +1,34 @@
+// $link = mysql_connect('localhost', 'hoge', 'moke', 't_user');
+// if (!$link) {
+//   die('接続失敗です。' . mysql_error());
+// }
+// print('<P>接続に成功しました。</P>');
+//MySQLに対する処理
+//t_userテーブルにある全てのデータを取得するSQL文を、変数に格納
+// $sql = 'SELECT * FROM t_user ';
+// SQL文を実行するコードを、変数に格納
+// $stmt = $dbh->query($sql);
+// foreach文でデータベースより取得したデータを1行ずつループ処理（連想配列で取得したデータのうち、1行文が$rowに格納される）
+// foreach($stmt as $row) {
+// 連想配列形式の1行のデータから、キーを指定し、出力する
+//   echo $row['id'].'：'.$row['name'];
+//   echo "test";
+// }
+
+// $close_flag = mysql_close($link);
+
+// if ($close_flag) {
+//   print('<p>切断に成功しました。</p>');
+// }
+// $comment[]
+// foreach ($pdo->query('select * from t_user') as $row) {
+//   foreach ($pdo->query('SELECT * FROM t_comment') as $row2) {
+//       if ($row2['id'] == $row['id']) {
+//         echo "<td>" . $row2['comment'] . "</td>";
+//       }
+//   }
+// }
+
+foreach ($pdo->query('SELECT * FROM t_comment') as $row2) {
+  echo  $row2['comment'];
+}

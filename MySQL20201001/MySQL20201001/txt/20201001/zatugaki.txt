@@ -1,0 +1,39 @@
+//Ajax関数
+function getData() {
+    // マスタデータの取得
+    $.ajax({
+        type: "POST"
+      , url: "./ajax1.php"
+      , data: { id: $("#id").val() }
+    }).done(function(res){
+        // ajaxがOK
+        $("#msg").text(JSON.parse(res));
+    }).fail(function() {
+        // 取得エラー
+        alert('取得エラー');
+    }).always(function() {
+        // 後処理(処理することが在れば)
+    });
+    return false;
+}
+http://vbnettips.blog.shinobi.jp/javascript/javascript%20jquery%E3%81%A7ajax%E3%82%92%E4%BD%BF%E3%81%84p
+https://techacademy.jp/magazine/30059
+PHPでAjax通信を使う方法を現役エンジニアが解説【初心者向け】
+Ajax（エイジャックス）とは、「Asynchronous JavaScript + XML」の略称でJavaScriptなど様々な技術を組み合わせて、クライアントとサーバ間を非同期で通信するモデルのことです。
+<?php
+// ①Ajax通信でPOSTされたデータを受け取る
+$postData1 = $_POST['postData1'];
+$postData2 = $_POST['postData2'];
+// ②受け取ったデータを配列に格納
+$result = array("postData1の値：". $postData1, "postData2の値：". $postData2);
+// ③ヘッダーの設定
+header('Content-type:application/json; charset=utf8');
+// ④JSON形式にして返却
+echo json_encode($result);
+?>
+[Uncaught ReferenceError: $ is not defined　の対処方法]
+ jQueryの要素を使うjsファイルが先に来てしまっているのでエラー吐かれているということです。
+ 従って、jqueryを最初に読ませるように、つまり一番上にjqueryを読むよう書けばOK。
+なので
+ReferenceError: "x" is not defined
+どこかで定義されていない変数を参照しています。この変数は、定義されている必要があります。または、現在のスクリプトか scope で利用可能か確認する必要があります。

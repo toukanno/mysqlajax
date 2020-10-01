@@ -1,0 +1,12 @@
+INSERT INTO t_user (id int,name varchar(255),login_id varchar(255),password varchar(255))VALUES(10,name1,user1,pass1);
+
+INSERT INTO t_user VALUES (10, name1, user1, pass1);
+INSERT INTO t_user VALUES (11, name2, user2, pass2);
+INSERT INTO t_user VALUES (11, name3, user3, pass3);
+
+INSERT INTO t_user VALUES (10, "name1", "user1", "pass1");
+INSERT INTO t_user VALUES (11, "name2", "user2", "pass2");
+INSERT INTO t_user VALUES (12, "name3", "user3", "pass3");
+
+SELECT * FROM `t_user` WHERE id = 10;
+SELECT * FROM t_user WHERE id = 10;

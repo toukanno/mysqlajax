@@ -1,0 +1,4 @@
+https://qiita.com/Morinikiz/items/dfdb33f25df4df0f672c
+安全なSQLの呼び出し方
+https://blog.senseshare.jp/placeholder.html
+プレースホルダとは何か？SQLインジェクション攻撃を回避せよ！

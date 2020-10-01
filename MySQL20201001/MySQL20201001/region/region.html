@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>地方選択</title>
+  <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+  <script>
+    $(() => {
+      //地方を選択したらajax通信を走らせる
+      //eventには .regionの変更イベントが渡される
+      $(".region").change(function (event) {
+        //既に追加されている都道府県をリセット
+        //.append(optionEl);で追加したら残ってしまうため
+        $("#select-area47").html(`<option value="">--選択--</option>`);
+        //targetでイベントが発生したDOM要素を取得
+        //event.targetには.region の HTML オブジェクトが入っている
+        // console.log(event);
+        console.log("event.target", event.target);
+        //event.target.valueには選択された地域が入っている
+        console.log("event.target.value", event.target.value);
+        //選択された地方を代入
+        const selectedRegion = event.target.value;
+
+        console.log("地域が選択されました", selectedRegion);
+
+        $.ajax({
+          // url: "http://localhost:3000/prefecture.html",
+          url: "prefecture.html",
+          //dataType: "html",
+          //ajax通信が成功したら data に prefecture.html の中身が入っている
+          success: function (data) {
+            // console.log("成功",data);
+            //取得した prefecture.htmlのoptionタグを全て検索して1つずつ見ていく
+            $(data)
+              .find("option")
+              .each(function (index, optionEl) {
+                //find()メソッド 子要素を取得　dataの中のoption
+                //each()メソッド 繰り返す処理
+                //indexは番号　optionElはoptionタグが入っている
+                //<option value="青森県" data-val="北海道・東北">青森県</option>
+                //optionEl.valueには "青森県"
+                //$(optionEl).data("val")には"北海道・東北"が入っている
+                //data("val")は独自のデータ属性data-valの値を取得するメソッド dataメソッド
+                //javascriptではdatasetで取得する
+                //都道府県名　表では使わないwarmで使う
+                const prefectureName = optionEl.value;
+                //地方名
+                const regionName = $(optionEl).data("val");
+
+                console.log(prefectureName);
+                console.log(regionName);
+                //選択した地方名と通信したoptionの地方名が同じならば
+                if (selectedRegion === regionName) {
+                  //警告レベルの黄色いログを出力
+                  console.warn(prefectureName);
+                  //optionElはoptionタグなのでappendで追加する
+                  //指定した子要素の最後にテキスト文字やHTML要素を追加することができるメソッド
+                  $("#select-area47").append(optionEl);
+                }
+              });
+          },
+          //ajax失敗したときの処理
+          error:function(data){
+            alert("error");
+          },
+        });
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <select name="foo" class="region">
+    <option value="" selected="selected">地方を選択</option>
+    <option value="北海道・東北">北海道・東北</option>
+    <option value="関東">関東</option>
+    <option value="甲信越・北陸">甲信越・北陸</option>
+    <option value="東海">東海</option>
+    <option value="関西">関西</option>
+    <option value="中国">中国</option>
+    <option value="四国">四国</option>
+    <option value="九州・沖縄">九州・沖縄</option>
+  </select>
+  <select name="area47" id="select-area47">
+    <option value="">--選択--</option>
+    <!--ここにajaxで生成したoptionタグがはいります-->
+  </select>
+</body>
+
+</html>

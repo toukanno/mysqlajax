@@ -1,0 +1,44 @@
+https://qiita.com/0_a_e/items/47835b95e524310925d7
+htmlで複数のクラスを指定 #send
+半角スペースを開けて複数記述
+action属性がないform　formのデータの送信先はそのhtmlファイル自身になる。
+https://qiita.com/tortuepin/items/a1cc9ad20f4b6f148a30
+https://creatorquest.jp/reference/html/element/form/
+nameネーム属性は、 フォームに名前を指定する属性です。他のフォームのname属性と重複したり、空文字にすることはできません。なお、HTML4.01では推奨されておらず、XHTML1.0でも非推奨、XHTML1.1では廃止されているので注意が必要です。代わりに、id属性を使いましょう。
+https://techacademy.jp/magazine/14872
+JavaScriptで書く「var,let,const」の違いと使い分け方法
+letでは再宣言が禁止されています。
+techacademy = '再代入OK';
+val()の使い方
+https://www.sejuku.net/blog/45297
+PHPではヘッダーを書かなくても自動的に送信してくれています。
+生のＨＴＴＰヘッダーを送信する
+http://doremi.s206.xrea.com/php/tips/header.html
+text/plain【MIMEタイプ】とは
+https://wa3.i-3-i.info/word15788.html
+「このファイルは普通のテキストファイル（中身が文字だけのファイル）ですよ」を意図した表現
+次はUTF-8の文字コードで書かれたテキスト文書を送信する時のヘッダーになります。
+header("Content-type: text/plain; charset=UTF-8");
+header("Content-type: text/plain; charset=UTF-8");
+https://www.softel.co.jp/blogs/tech/archives/3071
+https://www.php.net/manual/ja/function.header.php
+すべての実際の 出力の前にコールする必要がある
+https://developer.mozilla.org/ja/docs/Web/HTTP/Headers
+https://agohack.com/how-to-detect-an-ajax-request-on-php/
+[PHP] Ajax 通信かどうかの判定方法
+http://mio-koduki.blogspot.com/2012/03/phpjavascript-ajax.html
+https://blog.dksg.jp/2010/07/phpajax.html
+https://developer.mozilla.org/ja/docs/Web/API/XMLHttpRequest
+XMLHttpRequest
+https://ja.javascript.info/xmlhttprequest
+https://www.php.net/manual/ja/function.filter-input.php
+https://techacademy.jp/magazine/37062
+https://qiita.com/Shigeyoshi_Koyama/items/8df42e2b070bd387f1ee
+sprintf()でSQL文を生成する際、%は%でエスケープできる
+
+https://techacademy.jp/magazine/24111
+
+https://qiita.com/cr_tk/items/900914e8a6e19ee3c5b7
+PHPからhtml、javascriptへの変数、配列の受け渡し
+https://itsakura.com/js-moji-renketsu
+JavaScript 文字列を結合するサンプル

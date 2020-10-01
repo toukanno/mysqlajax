@@ -1,0 +1,79 @@
+try {
+  //DB名,ユーザ名,パスワード
+  $dsn = 'mysql:host = localhost;dbname = masayoshi_db';
+  $user = 'hoge';
+  $password = 'moke';
+  $pdo = new PDO($dsn , $user, $password,  array(
+    PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
+  ));//MySQLのデータベースに接続
+  $PDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //PDOのエラーレポートを表示
+  //submission.phpの値を取得
+  $comment = $_POST['comment'];
+  $datetime = date('Y-m-d h:m:s');
+  // INSERT文を変数に格納。:commentや:datetimeはプレースホルダという、値を入れるための単なる空箱
+  $stmt = $dbh->prepare($sql); //挿入する値は空のまま、SQL実行の準備をする
+  $sql = "INSERT INTO t_text(`comment`,`datetime`)VALUES(:comment,:datetime)";
+  $params = array(':comment' => $comment, ':datetime' => $datetime);// 挿入する値を配列に格納する
+  $stmt->execute($params);//挿入する値が入った変数をexecuteにセットしてSQLを実行
+  echo "<p>comment:".$comment."</p>";
+  echo '<p>で登録しました。</p>';// 登録完了のメッセージ
+}catch(PDOException $e){
+  exit('データベースに接続できませんでした。'.$e->getMessage());
+}
+
+
+require_once("func/header.php");
+
+if (!isset($_POST['comment'])) {
+  echo "内容が入力されていません";
+	header('Location: submission.php');
+	exit;
+}
+$pdo = new PDO('mysql:host=localhost;dbname=masayoshi_db;', 'hoge', 'moke',  array(
+  PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
+));
+var_dump($pdo->errorCode());
+var_dump($pdo->errorInfo());
+
+$comment = $_POST['comment'];
+  $datetime = date('Y-m-d h:m:s');
+  //DBへ接続
+  $pdo = new PDO('mysql:host=localhost;dbname=masayoshi_db;', 'hoge', 'moke',  array(
+    PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
+  ));
+  $sql = "INSERT INTO t_text(comment,datetime)VALUES($comment,$datetime)";
+
+  //SQLを実行
+  $res = $dbh->query($sql);
+  //$dbhにはデータベースのハンドラ(PDOインスタンス)が入っている
+
+  try {
+  //DB名,ユーザ名,パスワード
+  $dsn = 'mysql:host = localhost; dbname = masayoshi_db;';
+  $user = 'hoge';
+  $password = 'moke';
+  $dbh =  new PDO('mysql:host=localhost;dbname=masayoshi_db;', 'hoge', 'moke',  array(
+    PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
+  )); //MySQLのデータベースに接続
+  $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //PDOのエラーレポートを表示
+  // submission.phpの値を取得
+  $comment = $_POST['comment'];
+  echo $comment;
+  $datetime = date('Y-m-d h:m:s');
+  echo $datetime;
+  // INSERT文を変数に格納。:commentや:datetimeはプレースホルダという、値を入れるための単なる空箱
+  // $sql = "INSERT INTO t_text (text_id,reply_parent_id,reply_id,`user_id`,comment,`datetime`,deleteflg)VALUES(:text_id,:reply_parent_id,:reply_id,:`user_id`,:comment,:`datetime`,:deleteflg)";
+  $sql = "INSERT INTO t_text (comment, datetime) VALUES($comment,$datetime)";
+  print_r($sql);
+  // $stmt = $dbh->prepare($sql); //挿入する値は空のまま、SQL実行の準備をする
+  // $stmt = $dbh; //挿入する値は空のまま、SQL実行の準備をする
+  // $params = array(':text_id' => 0, ':reply_parent_id' => 0, ':reply_id' => 0, ':`user_id`' => 0, ':comment' => $comment, ':`datetime`' => $datetime, ':deleteflg' => 0); // 挿入する値を配列に格納する
+  $stmt = $dbh->prepare($sql); //挿入する値が入った変数をexecuteにセットしてSQLを実行
+  // 結果を取得する
+  // $row = $prepare->fetch();
+  $stmt->execute();//挿入する値が入った変数をexecuteにセットしてSQLを実行
+  echo "<p>comment:" . $comment . "</p>";
+  echo '<p>で登録しました。</p>'; // 登録完了のメッセージ
+} catch (PDOException $e) {
+  exit('データベースに接続できませんでした。' . $e->getMessage());
+}
